@@ -1,0 +1,27 @@
+{
+  "name": "rohtash-poonia",
+  "version": "1.0.0",
+  "description": "<!--\r   GitHub Profile README for Rohtash Poonia\r   Edit notes:\r   1) Replace placeholder project names in the Featured Projects section.\r   2) Update the current focus / learning lines if needed.\r   3) Keep the design minimal, clean, and recruiter-friendly.\r -->",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohtash-poonia/Rohtash-Poonia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rohtash-poonia/Rohtash-Poonia/issues"
+  },
+  "homepage": "https://github.com/rohtash-poonia/Rohtash-Poonia#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.6",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.13"
+  }
+}
