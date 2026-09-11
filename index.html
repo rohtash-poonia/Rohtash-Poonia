@@ -1,328 +1,886 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohtash Poonia</title>
+    <title>Rohtash Poonia | Full Stack Developer</title>
     <meta
       name="description"
-      content="Rohtash Poonia - Full Stack Developer portfolio profile"
+      content="Rohtash Poonia - Full Stack Developer portfolio profile. Building scalable digital experiences with clean architecture and modern web technologies."
     />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+            colors: {
+              brand: {
+                50: '#f0f7ff',
+                100: '#e0effe',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                indigo: '#6366f1',
+                violet: '#8b5cf6',
+              },
+            },
+          },
+        },
+      };
+    </script>
     <style>
-      body {
-        background:
-          radial-gradient(
-            circle at top left,
-            rgba(59, 130, 246, 0.22),
-            transparent 30%
-          ),
-          radial-gradient(
-            circle at bottom right,
-            rgba(168, 85, 247, 0.18),
-            transparent 35%
-          ),
-          #020817;
+      :root {
+        --bg-dark: #070b14;
+        --card-bg: rgba(15, 23, 42, 0.75);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --card-hover-border: rgba(99, 102, 241, 0.4);
       }
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--bg-dark);
+        background-image: 
+          radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.12), transparent 35%),
+          radial-gradient(circle at 85% 65%, rgba(139, 92, 246, 0.12), transparent 35%),
+          radial-gradient(circle at 50% 90%, rgba(99, 102, 241, 0.08), transparent 40%);
+        background-attachment: fixed;
+      }
+
+      .glass-panel {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      .glass-card {
+        background: rgba(15, 23, 42, 0.65);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        backdrop-filter: blur(12px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass-card:hover {
+        border-color: var(--card-hover-border);
+        box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+        transform: translateY(-3px);
+      }
+
       .text-gradient {
-        background: linear-gradient(
-          135deg,
-          #e2e8f0 0%,
-          #7dd3fc 35%,
-          #a78bfa 100%
-        );
+        background: linear-gradient(135deg, #ffffff 0%, #38bdf8 45%, #a78bfa 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
+
+      .text-gradient-purple {
+        background: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
       .grid-pattern {
-        background-image:
-          linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+        background-image: 
+          linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
         background-size: 32px 32px;
       }
-      .glass {
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
+
+      .glow-avatar {
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
       }
-      .bg-mesh {
-        background-image:
-          radial-gradient(
-            circle at top left,
-            rgba(59, 130, 246, 0.18),
-            transparent 30%
-          ),
-          radial-gradient(
-            circle at bottom right,
-            rgba(168, 85, 247, 0.16),
-            transparent 35%
-          );
+
+      .pulse-dot {
+        animation: pulseGlow 2s infinite;
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.15); }
+      }
+
+      .img-fallback-wrapper {
+        position: relative;
+        min-height: 140px;
+      }
+
+      /* Skeleton loader */
+      .skeleton {
+        background: linear-gradient(90deg, rgba(30, 41, 59, 0.5) 25%, rgba(51, 65, 85, 0.5) 50%, rgba(30, 41, 59, 0.5) 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+
+      @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
       }
     </style>
   </head>
-  <body class="min-h-screen text-slate-100 antialiased">
-    <div class="relative isolate overflow-hidden">
-      <div class="absolute inset-0 grid-pattern opacity-40"></div>
-      <div class="absolute inset-0 bg-mesh"></div>
+  <body class="min-h-screen text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <!-- Background Grid Pattern -->
+    <div class="fixed inset-0 grid-pattern pointer-events-none opacity-40"></div>
 
-      <main class="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <section
-          class="glass overflow-hidden rounded-[2rem] border border-slate-700/60 bg-slate-950/70 shadow-[0_0_40px_rgba(96,165,250,0.18)]"
-        >
-          <div class="border-b border-slate-700/60 px-6 py-5 sm:px-8">
-            <div
-              class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div class="flex items-center gap-4">
-                <div
-                  class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-violet-500 text-xl font-black text-white shadow-lg shadow-sky-500/30"
-                >
-                  RP
-                </div>
-                <div>
-                  <h1 class="text-2xl font-bold tracking-tight sm:text-3xl">
-                    Rohtash Poonia
-                  </h1>
-                  <p class="mt-1 text-sm text-slate-400">
-                    Full Stack Developer • 1+ Year Experience
-                  </p>
-                </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-10 space-y-8">
+      
+      <!-- Main Wrapper Container -->
+      <header class="glass-panel rounded-3xl p-6 lg:p-8 shadow-2xl shadow-indigo-950/20 relative overflow-hidden border border-slate-800">
+        <!-- Top Glow Overlay -->
+        <div class="absolute -top-24 -left-24 w-72 h-72 bg-sky-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-purple-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Navigation / Header Bar -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-800/80">
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-400 via-indigo-500 to-purple-500 flex items-center justify-center text-white text-xl font-extrabold shadow-lg glow-avatar">
+                RP
               </div>
+              <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full pulse-dot"></span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Rohtash Poonia</h1>
+                <span class="px-2.5 py-0.5 text-[11px] font-semibold bg-sky-500/10 text-sky-300 border border-sky-500/20 rounded-full">Pro</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 font-medium mt-0.5 flex items-center gap-2">
+                <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                Full Stack Developer • 1+ Year Experience
+              </p>
+            </div>
+          </div>
 
+          <!-- Social Links Buttons -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a
+              href="https://github.com/rohtash-poonia"
+              target="_blank"
+              class="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl bg-slate-800/90 text-slate-200 border border-slate-700 hover:border-slate-500 hover:bg-slate-800 hover:text-white transition shadow-sm"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rohtash-poonia2274/"
+              target="_blank"
+              class="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl bg-sky-500/10 text-sky-300 border border-sky-500/30 hover:bg-sky-500/20 hover:text-sky-200 transition shadow-sm"
+            >
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+              LinkedIn
+            </a>
+            <a
+              href="https://myportfolio-nu-two-77.vercel.app/"
+              target="_blank"
+              class="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl bg-purple-500/10 text-purple-300 border border-purple-500/30 hover:bg-purple-500/20 hover:text-purple-200 transition shadow-sm"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+              Live Portfolio
+            </a>
+            <a
+              href="mailto:rohtashpoonia2274@gmail.com"
+              class="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-xl bg-white text-slate-900 hover:bg-slate-200 transition shadow-md"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              Email Me
+            </a>
+          </div>
+        </div>
+
+        <!-- HERO SECTION (FIXED VACANT SPACE & OPTIMIZED PADDING) -->
+        <div class="mt-8 grid gap-8 lg:grid-cols-12 items-stretch">
+          
+          <!-- Hero Left Column (65% width) -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
               <div class="flex flex-wrap items-center gap-3">
-                <a
-                  href="https://www.linkedin.com/in/rohtash-poonia2274/"
-                  target="_blank"
-                  class="rounded-full border border-sky-400/30 bg-sky-500/10 px-4 py-2 text-sm font-medium text-sky-200 transition hover:bg-sky-500/20"
-                  >LinkedIn</a
-                >
-                <a
-                  href="https://myportfolio-nu-two-77.vercel.app/"
-                  target="_blank"
-                  class="rounded-full border border-slate-600 bg-slate-800/80 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-slate-500"
-                  >Portfolio</a
-                >
-                <a
-                  href="mailto:rohtashpoonia2274@gmail.com"
-                  class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-200"
-                  >Email</a
-                >
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span>Available for Full-Time & Freelance Projects</span>
+                </div>
+                
+                <!-- Visitor Count Pill Badge -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-xs font-mono text-sky-300">
+                  <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                  <span>Profile Visitors:</span>
+                  <img src="https://komarev.com/ghpvc/?username=rohtash-poonia&label=&color=38bdf8&style=flat-square" alt="Profile Views" class="h-4 rounded" />
+                </div>
               </div>
+
+              <!-- Animated Typewriter Bar -->
+              <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 font-mono text-xs sm:text-sm text-slate-200 shadow-inner">
+                <span class="text-sky-400 font-bold">$</span>
+                <span id="typewriterText" class="text-gradient font-bold"></span>
+                <span class="w-2 h-4 bg-sky-400 inline-block animate-pulse"></span>
+              </div>
+
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+                I build <span class="text-gradient">scalable digital products</span> with clean architecture & modern UI.
+              </h2>
+
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+                Hi, I'm <span class="font-semibold text-white">Rohtash Poonia</span>. I specialize in developing full-stack web applications using React, Node.js, Express, and MongoDB. I focus on creating high-performance, maintainable software with elegant user experiences.
+              </p>
+            </div>
+
+            <!-- Tech Badge Chips -->
+            <div class="space-y-3 pt-2">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Core Technologies</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition">React.js</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-slate-400 hover:text-white transition">Next.js</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-emerald-500/50 hover:text-emerald-300 transition">Node.js</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-indigo-500/50 hover:text-indigo-300 transition">Express.js</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-red-500/50 hover:text-red-300 transition">Nest.js</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-blue-500/50 hover:text-blue-300 transition">Python & Django</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-emerald-500/50 hover:text-emerald-300 transition">MongoDB</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition">PostgreSQL</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition">TypeScript</span>
+                <span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs font-medium text-slate-200 hover:border-amber-500/50 hover:text-amber-300 transition">Docker & AWS</span>
+              </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="#projects" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white text-xs font-bold tracking-wide shadow-lg shadow-sky-500/20 hover:from-sky-400 hover:to-indigo-500 transition">
+                Explore Projects →
+              </a>
+              <a href="#stats" class="px-5 py-2.5 rounded-xl bg-slate-800/90 text-slate-300 text-xs font-semibold border border-slate-700 hover:border-slate-500 hover:text-white transition">
+                GitHub Metrics
+              </a>
             </div>
           </div>
 
-          <div class="grid gap-8 px-6 py-8 sm:px-8 lg:grid-cols-[1.3fr_0.7fr]">
-            <div class="space-y-8">
-              <div
-                class="rounded-3xl border border-slate-700/60 bg-slate-900/70 p-6 sm:p-8"
-              >
-                <div class="mb-5 flex items-center gap-3">
-                  <span
-                    class="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"
-                  ></span>
-                  <span
-                    class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400"
-                    >Available for opportunities</span
-                  >
+          <!-- Hero Right Column (35% width - Terminal / Developer Card that fills vertical space) -->
+          <div class="lg:col-span-5 flex flex-col">
+            <div class="glass-card rounded-2xl p-5 border border-slate-700/70 h-full flex flex-col justify-between relative overflow-hidden bg-slate-900/80">
+              <!-- Window header bar -->
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                </div>
+                <span class="font-mono text-[11px] text-slate-400 font-medium">rohtash.profile.ts</span>
+                <span class="text-[10px] text-indigo-400 font-mono">v1.2.0</span>
+              </div>
+
+              <!-- Terminal Content / Developer Metrics Grid -->
+              <div class="py-4 space-y-4 font-mono text-xs">
+                <div class="space-y-1.5 text-slate-300">
+                  <p class="text-slate-500">// Developer Summary</p>
+                  <p><span class="text-purple-400">const</span> <span class="text-sky-300">developer</span> = {</p>
+                  <p class="pl-4"><span class="text-slate-400">name:</span> <span class="text-emerald-300">'Rohtash Poonia'</span>,</p>
+                  <p class="pl-4"><span class="text-slate-400">role:</span> <span class="text-emerald-300">'Full Stack Engineer'</span>,</p>
+                  <p class="pl-4"><span class="text-slate-400">experience:</span> <span class="text-amber-300">'1+ Year'</span>,</p>
+                  <p class="pl-4"><span class="text-slate-400">location:</span> <span class="text-emerald-300">'India'</span>,</p>
+                  <p class="pl-4"><span class="text-slate-400">openToWork:</span> <span class="text-sky-400">true</span></p>
+                  <p>};</p>
                 </div>
 
-                <h2 class="text-4xl font-black leading-tight sm:text-5xl">
-                  I build
-                  <span class="text-gradient"
-                    >scalable digital experiences</span
-                  >
-                  that feel premium and perform well.
-                </h2>
-
-                <p class="mt-5 max-w-2xl text-base leading-8 text-slate-300">
-                  I'm Rohtash Poonia, a Full Stack Developer focused on crafting
-                  modern web applications with clean architecture, smooth user
-                  experiences, and strong attention to detail.
-                </p>
-
-                <div class="mt-6 flex flex-wrap gap-3">
-                  <span
-                    class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300"
-                    >React</span
-                  >
-                  <span
-                    class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300"
-                    >Node.js</span
-                  >
-                  <span
-                    class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300"
-                    >Express</span
-                  >
-                  <span
-                    class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300"
-                    >MongoDB</span
-                  >
-                  <span
-                    class="rounded-full border border-slate-600 bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300"
-                    >TypeScript</span
-                  >
+                <div class="grid grid-cols-2 gap-2.5 pt-2 font-sans">
+                  <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Specialization</p>
+                    <p class="text-xs font-bold text-slate-100 mt-1">Full Stack</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Code Standard</p>
+                    <p class="text-xs font-bold text-sky-400 mt-1">Clean & Modular</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Learning</p>
+                    <p class="text-xs font-bold text-purple-400 mt-1">DevOps & Cloud</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <p class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Repository</p>
+                    <p class="text-xs font-bold text-emerald-400 mt-1">Open Source</p>
+                  </div>
                 </div>
               </div>
 
-              <div class="grid gap-4 sm:grid-cols-3">
-                <div
-                  class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-5"
-                >
-                  <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                    Role
-                  </p>
-                  <p class="mt-3 text-lg font-semibold text-slate-200">
-                    Full Stack Developer
-                  </p>
-                </div>
-                <div
-                  class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-5"
-                >
-                  <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                    Experience
-                  </p>
-                  <p class="mt-3 text-lg font-semibold text-slate-200">
-                    1+ Years
-                  </p>
-                </div>
-                <div
-                  class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-5"
-                >
-                  <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
-                    Focus
-                  </p>
-                  <p class="mt-3 text-lg font-semibold text-slate-200">
-                    Scalable Web Apps
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="rounded-3xl border border-slate-700/60 bg-slate-900/70 p-6 sm:p-7"
-              >
-                <div class="mb-5 flex items-center justify-between gap-3">
-                  <h3 class="text-xl font-bold text-white">Tech Stack</h3>
-                  <span
-                    class="rounded-full border border-slate-600 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-slate-400"
-                    >Tools</span
-                  >
-                </div>
-
-                <div class="flex flex-wrap gap-3">
-                  <img
-                    src="https://skillicons.dev/icons?i=react,nodejs,express,mongodb,js,ts,python,java,sql,git,docker,aws"
-                    alt="Tech stack"
-                    class="h-auto w-full rounded-xl"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-6">
-              <div
-                class="rounded-3xl border border-slate-700/60 bg-gradient-to-br from-slate-900 to-slate-800 p-6 shadow-2xl shadow-sky-500/10"
-              >
-                <div class="mb-5 flex items-center justify-between">
-                  <h3 class="text-lg font-semibold text-white">
-                    Currently Learning
-                  </h3>
-                  <span
-                    class="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-300"
-                    >Active</span
-                  >
-                </div>
-
-                <ul class="space-y-3 text-sm text-slate-300">
-                  <li class="flex items-start gap-3">
-                    <span class="mt-1 h-2 w-2 rounded-full bg-sky-400"></span>
-                    DevOps workflows and deployment pipelines
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span
-                      class="mt-1 h-2 w-2 rounded-full bg-violet-400"
-                    ></span>
-                    System Design fundamentals and scalability
-                  </li>
-                  <li class="flex items-start gap-3">
-                    <span
-                      class="mt-1 h-2 w-2 rounded-full bg-emerald-400"
-                    ></span>
-                    AI/ML integrations and practical applications
-                  </li>
-                </ul>
-              </div>
-
-              <div
-                class="rounded-3xl border border-slate-700/60 bg-slate-900/70 p-6"
-              >
-                <h3 class="text-lg font-semibold text-white">Interests</h3>
-                <div class="mt-4 flex flex-wrap gap-2">
-                  <span
-                    class="rounded-full bg-violet-500/10 px-3 py-1.5 text-xs font-medium text-violet-200 border border-violet-400/20"
-                    >Open Source</span
-                  >
-                  <span
-                    class="rounded-full bg-sky-500/10 px-3 py-1.5 text-xs font-medium text-sky-200 border border-sky-400/20"
-                    >AI/ML</span
-                  >
-                  <span
-                    class="rounded-full bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-200 border border-emerald-400/20"
-                    >Web3</span
-                  >
-                  <span
-                    class="rounded-full bg-amber-500/10 px-3 py-1.5 text-xs font-medium text-amber-200 border border-amber-400/20"
-                    >System Design</span
-                  >
-                </div>
-              </div>
-
-              <div
-                class="rounded-3xl border border-slate-700/60 bg-slate-900/70 p-6"
-              >
-                <h3 class="text-lg font-semibold text-white">Quick Summary</h3>
-                <div class="mt-4 space-y-3 text-sm text-slate-300">
-                  <p>• Building practical, maintainable products</p>
-                  <p>• Focus on developer experience and clean UX</p>
-                  <p>• Always learning and shipping better solutions</p>
-                </div>
+              <!-- Terminal Footer status -->
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  System Status: Operational
+                </span>
+                <span class="font-mono text-slate-500">UTF-8</span>
               </div>
             </div>
           </div>
+        </div>
+      </header>
 
-          <div class="border-t border-slate-700/60 px-6 py-6 sm:px-8">
-            <div
-              class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between"
-            >
+      <!-- TECH STACK SECTION (RELIABLE SVG ICONS & CATEGORIES) -->
+      <section class="glass-panel rounded-3xl p-6 lg:p-8 space-y-6 border border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-sky-400 tracking-wider uppercase">Skills & Tooling</span>
+            <h3 class="text-xl font-bold text-white mt-1">Tech Stack Overview</h3>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-slate-800 text-xs text-slate-400 font-mono">12+ Core Competencies</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5">
+          <!-- React -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-sky-500/40">
+            <div class="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
+              <svg class="w-5 h-5 animate-spin-slow" fill="currentColor" viewBox="0 0 24 24"><path d="M12 9a3 3 0 100 6 3 3 0 000-6zm0-2a5 5 0 110 10 5 5 0 010-10zm0-5c-4.97 0-9 1.79-9 4s4.03 4 9 4 9-1.79 9-4-4.03-4-9-4zm0 6c-3.866 0-7-1.343-7-3s3.134-3 7-3 7 1.343 7 3-3.134 3-7 3z"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">React.js</p>
+              <p class="text-[10px] text-slate-400">Frontend UI</p>
+            </div>
+          </div>
+
+          <!-- Next.js -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-slate-400">
+            <div class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-100 shrink-0 font-mono font-bold text-xs">
+              NXT
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Next.js</p>
+              <p class="text-[10px] text-slate-400">Full-Stack Framework</p>
+            </div>
+          </div>
+
+          <!-- Node.js -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-emerald-500/40">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7.5v9L12 22l10-5.5v-9L12 2zm0 2.31l7.5 4.12v7.14L12 19.69l-7.5-4.12V8.43L12 4.31z"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Node.js</p>
+              <p class="text-[10px] text-slate-400">Backend Runtime</p>
+            </div>
+          </div>
+
+          <!-- Express -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-slate-400">
+            <div class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200 shrink-0 font-mono font-bold text-xs">
+              EX
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Express.js</p>
+              <p class="text-[10px] text-slate-400">API Framework</p>
+            </div>
+          </div>
+
+          <!-- Nest.js -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-red-500/40">
+            <div class="w-9 h-9 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400 shrink-0 font-mono font-bold text-xs">
+              NST
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Nest.js</p>
+              <p class="text-[10px] text-slate-400">Enterprise Backend</p>
+            </div>
+          </div>
+
+          <!-- Python -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-blue-500/40">
+            <div class="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 font-mono font-bold text-xs">
+              PY
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Python</p>
+              <p class="text-[10px] text-slate-400">Backend & Scripting</p>
+            </div>
+          </div>
+
+          <!-- Django -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-emerald-500/40">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 font-mono font-bold text-xs">
+              DJ
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Django</p>
+              <p class="text-[10px] text-slate-400">Web Framework</p>
+            </div>
+          </div>
+
+          <!-- MongoDB -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-emerald-500/40">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2s-5 6.5-5 11a5 5 0 0010 0c0-4.5-5-11-5-11zm0 14a2 2 0 110-4 2 2 0 010 4z"/></svg>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">MongoDB</p>
+              <p class="text-[10px] text-slate-400">NoSQL Database</p>
+            </div>
+          </div>
+
+          <!-- PostgreSQL -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-sky-500/40">
+            <div class="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 font-mono font-bold text-xs">
+              PG
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">PostgreSQL</p>
+              <p class="text-[10px] text-slate-400">Relational SQL DB</p>
+            </div>
+          </div>
+
+          <!-- TypeScript -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-sky-500/40">
+            <div class="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 font-mono font-bold text-xs">
+              TS
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">TypeScript</p>
+              <p class="text-[10px] text-slate-400">Type Safety</p>
+            </div>
+          </div>
+
+          <!-- Docker -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-sky-500/40">
+            <div class="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0 font-mono font-bold text-xs">
+              DOC
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Docker</p>
+              <p class="text-[10px] text-slate-400">Containerization</p>
+            </div>
+          </div>
+
+          <!-- AWS -->
+          <div class="glass-card p-3.5 rounded-2xl flex items-center gap-3 border border-slate-800 hover:border-amber-500/40">
+            <div class="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 font-mono font-bold text-xs">
+              AWS
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">AWS</p>
+              <p class="text-[10px] text-slate-400">Cloud Services</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Skill Icons Fallback Banner -->
+        <div class="pt-2">
+          <div class="p-3 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+            <span class="text-xs text-slate-400">Visual Skill Icons Strip:</span>
+            <img
+              src="https://skillicons.dev/icons?i=react,nextjs,nodejs,express,nest,python,django,mongodb,postgres,js,ts,docker,aws"
+              alt="Tech Stack Icons"
+              class="h-7 opacity-85 hover:opacity-100 transition"
+              onerror="this.style.display='none'"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS SECTION (UPGRADED TO CLASSIC PREMIUM SHOWCASE CARDS) -->
+      <section id="projects" class="glass-panel rounded-3xl p-6 lg:p-8 space-y-6 border border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-indigo-400 tracking-wider uppercase">Portfolio</span>
+            <h3 class="text-xl font-bold text-white mt-1">Featured Projects</h3>
+          </div>
+          <p class="text-xs text-slate-400">Production-ready applications & architectural prototypes</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          
+          <!-- Project 1 Card -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group hover:border-sky-500/50">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-lg">
+                  🛍️
+                </div>
+                <span class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full">
+                  Full Stack
+                </span>
+              </div>
+
               <div>
-                <p class="text-xs uppercase tracking-[0.24em] text-slate-400">
-                  GitHub Stats
+                <h4 class="text-lg font-bold text-white group-hover:text-sky-300 transition">E-Commerce Microservices Platform</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Scalable online marketplace built with React, Node.js, and MongoDB. Features secure JWT authentication, Stripe payment processing, real-time inventory management, and admin control panels.
                 </p>
-                <div class="mt-4 flex flex-wrap gap-4">
-                  <img
-                    src="https://github-readme-stats.vercel.app/api?username=rohtash-poonia&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"
-                    alt="GitHub stats"
-                    class="h-32 rounded-xl"
-                  />
-                  <img
-                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=rohtash-poonia&layout=compact&theme=tokyonight&hide_border=true"
-                    alt="Top languages"
-                    class="h-32 rounded-xl"
-                  />
-                </div>
               </div>
 
-              <div
-                class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-4"
-              >
-                <p class="text-sm text-slate-300">
-                  "Code is not just logic — it’s also clarity, discipline, and
-                  creativity."
-                </p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">React</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Node.js</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">MongoDB</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Express</span>
               </div>
             </div>
+
+            <div class="flex items-center gap-3 pt-5 mt-4 border-t border-slate-800/80">
+              <a
+                href="https://github.com/rohtash-poonia"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-200 transition"
+              >
+                View Repository
+              </a>
+              <a
+                href="https://myportfolio-nu-two-77.vercel.app/"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-center text-xs font-semibold text-sky-200 transition"
+              >
+                Live Demo ↗
+              </a>
+            </div>
           </div>
-        </section>
-      </main>
+
+          <!-- Project 2 Card -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group hover:border-indigo-500/50">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg">
+                  ⚡
+                </div>
+                <span class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 rounded-full">
+                  Real-Time
+                </span>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-bold text-white group-hover:text-indigo-300 transition">Collaborative Workspace & Chat</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Real-time messaging application powered by Socket.io and Express. Features instant room creation, online presence status, file sharing, and persistent message store in MongoDB.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Socket.io</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">React</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Node.js</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Tailwind</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 pt-5 mt-4 border-t border-slate-800/80">
+              <a
+                href="https://github.com/rohtash-poonia"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-200 transition"
+              >
+                View Repository
+              </a>
+              <a
+                href="https://myportfolio-nu-two-77.vercel.app/"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 border border-indigo-500/40 text-center text-xs font-semibold text-indigo-200 transition"
+              >
+                Live Demo ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 Card -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group hover:border-purple-500/50">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg">
+                  🐳
+                </div>
+                <span class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-purple-500/10 text-purple-400 border border-purple-500/30 rounded-full">
+                  DevOps & Cloud
+                </span>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-bold text-white group-hover:text-purple-300 transition">DevOps Metrics & Container Dashboard</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Automated deployment dashboard for monitoring Docker container health, server logs, and API metrics. Integrates AWS cloud SDKs and automated GitHub Actions CI/CD workflows.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Docker</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">AWS</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Node.js</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">CI/CD</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 pt-5 mt-4 border-t border-slate-800/80">
+              <a
+                href="https://github.com/rohtash-poonia"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-200 transition"
+              >
+                View Repository
+              </a>
+              <a
+                href="https://myportfolio-nu-two-77.vercel.app/"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/40 text-center text-xs font-semibold text-purple-200 transition"
+              >
+                Live Demo ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4 Card -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between group hover:border-amber-500/50">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg">
+                  🧠
+                </div>
+                <span class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-full">
+                  AI Integration
+                </span>
+              </div>
+
+              <div>
+                <h4 class="text-lg font-bold text-white group-hover:text-amber-300 transition">AI Productivity & Task Orchestrator</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  Smart task management tool utilizing OpenAI APIs for automatic task breakdown, intelligent prioritization, and natural language query processing with TypeScript and Next.js.
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">TypeScript</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Next.js</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">OpenAI API</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Tailwind</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 pt-5 mt-4 border-t border-slate-800/80">
+              <a
+                href="https://github.com/rohtash-poonia"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-center text-xs font-semibold text-slate-200 transition"
+              >
+                View Repository
+              </a>
+              <a
+                href="https://myportfolio-nu-two-77.vercel.app/"
+                target="_blank"
+                class="flex-1 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-center text-xs font-semibold text-amber-200 transition"
+              >
+                Live Demo ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- GITHUB METRICS & STATS SECTION (FIXED IMAGE & ICON BUGS WITH FALLBACKS) -->
+      <section id="stats" class="glass-panel rounded-3xl p-6 lg:p-8 space-y-6 border border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-semibold text-sky-400 tracking-wider uppercase">Analytics</span>
+            <h3 class="text-xl font-bold text-white mt-1">GitHub Performance & Trophies</h3>
+          </div>
+          <a
+            href="https://github.com/rohtash-poonia"
+            target="_blank"
+            class="text-xs text-sky-400 hover:text-sky-300 font-mono transition flex items-center gap-1"
+          >
+            @rohtash-poonia on GitHub ↗
+          </a>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-2">
+          
+          <!-- Card 1: GitHub General Stats -->
+          <div class="glass-card rounded-2xl p-4 border border-slate-800 flex flex-col justify-between overflow-hidden">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-300">GitHub Stats Overview</span>
+              <span class="text-[10px] font-mono text-slate-500">Live API</span>
+            </div>
+            <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-950/40 p-2 min-h-[160px]">
+              <img
+                src="https://github-readme-stats.vercel.app/api?username=rohtash-poonia&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"
+                alt="Rohtash Poonia GitHub Stats"
+                class="w-full max-w-full rounded-lg object-contain transition duration-300 hover:scale-[1.01]"
+                loading="lazy"
+                onerror="handleImgFallback(this, 'GitHub General Stats', 'Live stats snapshot for @rohtash-poonia')"
+              />
+            </div>
+          </div>
+
+          <!-- Card 2: Top Languages -->
+          <div class="glass-card rounded-2xl p-4 border border-slate-800 flex flex-col justify-between overflow-hidden">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-300">Top Languages</span>
+              <span class="text-[10px] font-mono text-slate-500">Live API</span>
+            </div>
+            <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-950/40 p-2 min-h-[160px]">
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=rohtash-poonia&layout=compact&theme=tokyonight&hide_border=true"
+                alt="Top Languages"
+                class="w-full max-w-full rounded-lg object-contain transition duration-300 hover:scale-[1.01]"
+                loading="lazy"
+                onerror="handleImgFallback(this, 'Top Languages Distribution', 'Primary languages across public repositories')"
+              />
+            </div>
+          </div>
+
+          <!-- Card 3: GitHub Contribution Streak (FIXED HEROKU URL BUG) -->
+          <div class="glass-card rounded-2xl p-4 border border-slate-800 md:col-span-2 overflow-hidden">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-300">Contribution Streak & Activity</span>
+              <span class="text-[10px] font-mono text-emerald-400">Active Daily</span>
+            </div>
+            <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-950/40 p-2 min-h-[170px]">
+              <img
+                src="https://streak-stats.demolab.com?user=rohtash-poonia&theme=tokyonight&hide_border=true"
+                alt="GitHub Streak Stats"
+                class="w-full max-w-full rounded-lg object-contain transition duration-300 hover:scale-[1.01]"
+                loading="lazy"
+                onerror="handleImgFallback(this, 'Contribution Streak Stats', 'Daily commit & pull request activity streak')"
+              />
+            </div>
+          </div>
+
+          <!-- Card 4: GitHub Trophies -->
+          <div class="glass-card rounded-2xl p-4 border border-slate-800 md:col-span-2 overflow-hidden">
+            <div class="mb-3 flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-300">GitHub Trophies</span>
+              <span class="text-[10px] font-mono text-indigo-400">Achievements</span>
+            </div>
+            <div class="w-full flex justify-center items-center overflow-hidden rounded-xl bg-slate-950/40 p-2 min-h-[140px]">
+              <img
+                src="https://github-profile-trophy.vercel.app/?username=rohtash-poonia&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4"
+                alt="GitHub Trophies"
+                class="w-full max-w-full rounded-lg object-contain transition duration-300 hover:scale-[1.01]"
+                loading="lazy"
+                onerror="handleImgFallback(this, 'GitHub Profile Trophies', 'Repository milestones & contribution achievements')"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LEARNING & PHILOSOPHY SECTION -->
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="glass-panel rounded-3xl p-6 border border-slate-800 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
+            <h4 class="text-base font-bold text-white">Current Focus & Learning</h4>
+          </div>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sky-400 mt-2 shrink-0"></span>
+              <span>DevOps workflows, container orchestration (Docker), & CI/CD deployment pipelines</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+              <span>System Design fundamentals, database indexing, caching strategies & message queues</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0"></span>
+              <span>AI/ML model integrations and practical web engineering use-cases</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="glass-panel rounded-3xl p-6 border border-slate-800 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
+              <h4 class="text-base font-bold text-white">Engineering Mindset</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+              "Code is not just logic — it’s also clarity, discipline, and creativity. Building great software requires continuous learning, attention to detail, and empathy for the end user."
+            </p>
+          </div>
+          <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+            <span>Rohtash Poonia</span>
+            <span class="font-mono text-sky-400">Full Stack Engineer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>© 2026 Rohtash Poonia. Crafted with precision & performance.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/rohtash-poonia" target="_blank" class="hover:text-slate-200 transition">GitHub</a>
+          <a href="https://www.linkedin.com/in/rohtash-poonia2274/" target="_blank" class="hover:text-slate-200 transition">LinkedIn</a>
+          <a href="mailto:rohtashpoonia2274@gmail.com" class="hover:text-slate-200 transition">Contact</a>
+        </div>
+      </footer>
+
     </div>
+
+    <!-- Client Script for Image Fallback Handling & Typewriter Animation -->
+    <script>
+      function handleImgFallback(img, title, subtitle) {
+        console.warn('Image failed to load:', img.src);
+        const parent = img.parentElement;
+        img.style.display = 'none';
+
+        const fallback = document.createElement('div');
+        fallback.className = 'w-full py-8 px-4 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col items-center justify-center text-center space-y-2';
+        fallback.innerHTML = `
+          <div class="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-sm">
+            📊
+          </div>
+          <p class="text-xs font-bold text-slate-200">${title}</p>
+          <p class="text-[11px] text-slate-400 max-w-xs">${subtitle}</p>
+          <a href="https://github.com/rohtash-poonia" target="_blank" class="text-[11px] text-sky-400 hover:underline font-mono mt-1">
+            View Live on GitHub profile →
+          </a>
+        `;
+        parent.appendChild(fallback);
+      }
+
+      // Animated Typewriter Script
+      (function initTypewriter() {
+        const roles = [
+          "Full Stack Developer",
+          "Building Scalable Web Products",
+          "React, Node.js & Next.js Expert",
+          "Python, Django & Nest.js Developer",
+          "DevOps & Cloud Engineering Enthusiast"
+        ];
+        let roleIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById("typewriterText");
+
+        if (!typewriterEl) return;
+
+        function typeEffect() {
+          const currentRole = roles[roleIdx];
+          if (isDeleting) {
+            charIdx--;
+            typewriterEl.textContent = currentRole.substring(0, charIdx);
+          } else {
+            charIdx++;
+            typewriterEl.textContent = currentRole.substring(0, charIdx);
+          }
+
+          let speed = isDeleting ? 35 : 75;
+
+          if (!isDeleting && charIdx === currentRole.length) {
+            speed = 1800; // Pause at full word
+            isDeleting = true;
+          } else if (isDeleting && charIdx === 0) {
+            isDeleting = false;
+            roleIdx = (roleIdx + 1) % roles.length;
+            speed = 350; // Pause before typing next word
+          }
+
+          setTimeout(typeEffect, speed);
+        }
+
+        typeEffect();
+      })();
+    </script>
   </body>
 </html>

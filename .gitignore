@@ -1,14 +1,13 @@
-# Dependencies
+﻿# Dependencies
 node_modules/
-
 # Build output
-/dist/
+dist/
 *.log
-
 # Environment files
 .env
 .env.*
-
+# Optional lockfile
+package-lock.json
 # Editor / OS files
 .vscode/
 .idea/
