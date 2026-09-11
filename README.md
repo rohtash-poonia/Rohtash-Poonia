@@ -94,7 +94,7 @@ Right now, I’m learning AI-focused skills like RAG systems, LangChain, Generat
 
 ### Connect and Build Something Awesome Together!
 
-Open for collaboration and freelancing opportunities.
+Open for collaboration and Freelancing opportunities 💻😊.
 
 <p align="left">
   <a href="https://www.linkedin.com/in/rohtash-poonia2274/" target="_blank">
