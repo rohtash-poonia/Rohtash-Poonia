@@ -8,7 +8,13 @@
 </h1>
 
 <p align="left">
-  <strong>Full Stack Developer</strong> · I build practical web products with clean UX, reliable backend systems, and a sharp eye for detail.
+  <strong>
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&width=380&lines=Full+Stack+Developer;Frontend+%7C+Backend+%7C+Cloud+%7C+AI+Ready" alt="Typing Animation" />
+  </strong>
+</p>
+
+<p align="left">
+  I build practical web products with clean UX, reliable backend systems, and a sharp eye for detail.
 </p>
 
 <p align="left">
@@ -49,10 +55,10 @@ Right now, I’m learning AI-focused skills like RAG systems, LangChain, Generat
       <img src="https://img.shields.io/badge/CSS-0F172A?style=flat-square&logo=css3&logoColor=38BDF8" alt="CSS" />
       <img src="https://img.shields.io/badge/Bootstrap-0F172A?style=flat-square&logo=bootstrap&logoColor=8B5CF6" alt="Bootstrap" />
       <img src="https://img.shields.io/badge/JavaScript-0F172A?style=flat-square&logo=javascript&logoColor=FACC15" alt="JavaScript" />
-      <img src="https://img.shields.io/badge/React-0F172A?style=flat-square&logo=react&logoColor=7DD3FC" alt="React" />
-      <img src="https://img.shields.io/badge/Next.js-0F172A?style=flat-square&logo=nextdotjs&logoColor=F8FAFC" alt="Next.js" />
       <img src="https://img.shields.io/badge/TypeScript-0F172A?style=flat-square&logo=typescript&logoColor=7DD3FC" alt="TypeScript" />
       <img src="https://img.shields.io/badge/Tailwind-0F172A?style=flat-square&logo=tailwindcss&logoColor=67E8F9" alt="Tailwind CSS" />
+      <img src="https://img.shields.io/badge/React-0F172A?style=flat-square&logo=react&logoColor=7DD3FC" alt="React" />
+      <img src="https://img.shields.io/badge/Next.js-0F172A?style=flat-square&logo=nextdotjs&logoColor=F8FAFC" alt="Next.js" />
     </td>
     <td valign="top" width="33%">
       <h3>Backend & Data</h3>
@@ -62,6 +68,7 @@ Right now, I’m learning AI-focused skills like RAG systems, LangChain, Generat
       <img src="https://img.shields.io/badge/PostgreSQL-0F172A?style=flat-square&logo=postgresql&logoColor=A5F3FC" alt="PostgreSQL" />
       <img src="https://img.shields.io/badge/Django-0F172A?style=flat-square&logo=django&logoColor=99F6E4" alt="Django" />
       <img src="https://img.shields.io/badge/Python-0F172A?style=flat-square&logo=python&logoColor=7DD3FC" alt="Python" />
+      <img src="https://img.shields.io/badge/AWS-0F172A?style=flat-square&logo=amazonaws&logoColor=F7C948" alt="AWS" />
       <img src="https://img.shields.io/badge/REST%20API-0F172A?style=flat-square&logo=fastapi&logoColor=F8FAFC" alt="REST API" />
       <img src="https://img.shields.io/badge/CI%2FCD-0F172A?style=flat-square&logo=githubactions&logoColor=F8FAFC" alt="CI/CD" />
       <img src="https://img.shields.io/badge/DevOps-0F172A?style=flat-square&logo=docker&logoColor=93C5FD" alt="DevOps" />
@@ -70,6 +77,7 @@ Right now, I’m learning AI-focused skills like RAG systems, LangChain, Generat
       <h3>Tools</h3>
       <img src="https://img.shields.io/badge/Git-0F172A?style=flat-square&logo=git&logoColor=FCA5A5" alt="Git" />
       <img src="https://img.shields.io/badge/GitHub-0F172A?style=flat-square&logo=github&logoColor=F8FAFC" alt="GitHub" />
+      <img src="https://img.shields.io/badge/Docker-0F172A?style=flat-square&logo=docker&logoColor=93C5FD" alt="Docker" />
       <img src="https://img.shields.io/badge/Vercel-0F172A?style=flat-square&logo=vercel&logoColor=F8FAFC" alt="Vercel" />
       <img src="https://img.shields.io/badge/Netlify-0F172A?style=flat-square&logo=netlify&logoColor=67E8F9" alt="Netlify" />
       <img src="https://img.shields.io/badge/Postman-0F172A?style=flat-square&logo=postman&logoColor=FF6C37" alt="Postman" />
@@ -83,6 +91,10 @@ Right now, I’m learning AI-focused skills like RAG systems, LangChain, Generat
 ---
 
 ## Connect
+
+### Connect and Build Something Awesome Together!
+
+Open for collaboration and freelancing opportunities.
 
 <p align="left">
   <a href="https://www.linkedin.com/in/rohtash-poonia2274/" target="_blank">
