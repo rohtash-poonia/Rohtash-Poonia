@@ -73,6 +73,7 @@ Right now, I’m focused on shipping reliable features, improving system design 
   </tr>
 </table>
 
+<!--
 ---
 
 ## GitHub Analytics
@@ -81,7 +82,8 @@ Right now, I’m focused on shipping reliable features, improving system design 
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=rohtash-poonia&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" />
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rohtash-poonia&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
 </p>
-
+-->
+<!--
 ---
 
 ## Featured Projects
@@ -116,6 +118,7 @@ Right now, I’m focused on shipping reliable features, improving system design 
     </td>
   </tr>
 </table>
+-->
 
 ---
 
