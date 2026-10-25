@@ -21,9 +21,11 @@
   <a href="https://www.linkedin.com/in/rohtash-poonia2274/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0F172A?style=flat-square&logo=linkedin&logoColor=F8FAFC" alt="LinkedIn" />
   </a>
-  <a href="https://myportfolio-nu-two-77.vercel.app/" target="_blank">
+  &nbsp;&nbsp;
+  <a href="https://fullstack-portfolio-beryl-gamma.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-0F172A?style=flat-square&logo=vercel&logoColor=F8FAFC" alt="Portfolio" />
   </a>
+  &nbsp;&nbsp;
   <a href="mailto:rohtashpoonia2274@gmail.com">
     <img src="https://img.shields.io/badge/Email-7C2D12?style=flat-square&logo=gmail&logoColor=F8FAFC" alt="Email" />
   </a>
@@ -59,6 +61,7 @@ Right now, I’m learning AI-focused skills like RAG systems, LangChain, Generat
       <img src="https://img.shields.io/badge/Tailwind-0F172A?style=flat-square&logo=tailwindcss&logoColor=67E8F9" alt="Tailwind CSS" />
       <img src="https://img.shields.io/badge/React-0F172A?style=flat-square&logo=react&logoColor=7DD3FC" alt="React" />
       <img src="https://img.shields.io/badge/Next.js-0F172A?style=flat-square&logo=nextdotjs&logoColor=F8FAFC" alt="Next.js" />
+      <img src="https://img.shields.io/badge/shadcn%2Fui-0F172A?style=flat-square&logo=shadcnui&logoColor=F8FAFC" alt="shadcn/ui" />
     </td>
     <td valign="top" width="33%">
       <h3>Backend & Data</h3>
@@ -66,9 +69,10 @@ Right now, I’m learning AI-focused skills like RAG systems, LangChain, Generat
       <img src="https://img.shields.io/badge/NestJS-0F172A?style=flat-square&logo=nestjs&logoColor=E11D48" alt="NestJS" />
       <img src="https://img.shields.io/badge/Prisma-0F172A?style=flat-square&logo=prisma&logoColor=C4B5FD" alt="Prisma" />
       <img src="https://img.shields.io/badge/PostgreSQL-0F172A?style=flat-square&logo=postgresql&logoColor=A5F3FC" alt="PostgreSQL" />
+      <img src="https://img.shields.io/badge/MongoDB-0F172A?style=flat-square&logo=mongodb&logoColor=47A248" alt="MongoDB" />
       <img src="https://img.shields.io/badge/Django-0F172A?style=flat-square&logo=django&logoColor=99F6E4" alt="Django" />
       <img src="https://img.shields.io/badge/Python-0F172A?style=flat-square&logo=python&logoColor=7DD3FC" alt="Python" />
-      <img src="https://img.shields.io/badge/AWS-0F172A?style=flat-square&logo=amazonaws&logoColor=F7C948" alt="AWS" />
+      <img src="https://img.shields.io/badge/AWS-0F172A?style=flat-square&logo=amazonaws&logoColor=FF9900" alt="AWS" />
       <img src="https://img.shields.io/badge/REST%20API-0F172A?style=flat-square&logo=fastapi&logoColor=F8FAFC" alt="REST API" />
       <img src="https://img.shields.io/badge/CI%2FCD-0F172A?style=flat-square&logo=githubactions&logoColor=F8FAFC" alt="CI/CD" />
       <img src="https://img.shields.io/badge/DevOps-0F172A?style=flat-square&logo=docker&logoColor=93C5FD" alt="DevOps" />
@@ -100,9 +104,11 @@ Open for collaboration and Freelancing opportunities 💻😊.
   <a href="https://www.linkedin.com/in/rohtash-poonia2274/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0F172A?style=flat-square&logo=linkedin&logoColor=F8FAFC" alt="LinkedIn" />
   </a>
-  <a href="https://myportfolio-nu-two-77.vercel.app/" target="_blank">
+  &nbsp;&nbsp;
+  <a href="https://fullstack-portfolio-beryl-gamma.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-0F172A?style=flat-square&logo=vercel&logoColor=F8FAFC" alt="Portfolio" />
   </a>
+  &nbsp;&nbsp;
   <a href="mailto:rohtashpoonia2274@gmail.com">
     <img src="https://img.shields.io/badge/Email-7C2D12?style=flat-square&logo=gmail&logoColor=F8FAFC" alt="Email" />
   </a>
