@@ -19,16 +19,13 @@
 
 <p align="left">
   <a href="https://www.linkedin.com/in/rohtash-poonia2274/" target="_blank" style="text-decoration: none">
-    <img src="https://img.shields.io/badge/LinkedIn-0F172A?style=flat-square&logo=linkedin&logoColor=F8FAFC" alt="LinkedIn" />
-  </a>
+    <img src="https://img.shields.io/badge/LinkedIn-0F172A?style=flat-square&logo=linkedin&logoColor=F8FAFC" alt="LinkedIn" /></a>
   &nbsp;&nbsp;
   <a href="https://fullstack-portfolio-beryl-gamma.vercel.app/" target="_blank" style="text-decoration: none">
-    <img src="https://img.shields.io/badge/Portfolio-0F172A?style=flat-square&logo=vercel&logoColor=F8FAFC" alt="Portfolio" />
-  </a>
+    <img src="https://img.shields.io/badge/Portfolio-0F172A?style=flat-square&logo=vercel&logoColor=F8FAFC" alt="Portfolio" /></a>
   &nbsp;&nbsp;
   <a href="mailto:rohtashpoonia2274@gmail.com" style="text-decoration: none">
-    <img src="https://img.shields.io/badge/Email-7C2D12?style=flat-square&logo=gmail&logoColor=F8FAFC" alt="Email" />
-  </a>
+    <img src="https://img.shields.io/badge/Email-7C2D12?style=flat-square&logo=gmail&logoColor=F8FAFC" alt="Email" /></a>
 </p>
 
 <p align="left">
@@ -102,16 +99,13 @@ Open for collaboration and Freelancing opportunities 💻😊.
 
 <p align="left">
   <a href="https://www.linkedin.com/in/rohtash-poonia2274/" target="_blank" style="text-decoration: none">
-    <img src="https://img.shields.io/badge/LinkedIn-0F172A?style=flat-square&logo=linkedin&logoColor=F8FAFC" alt="LinkedIn" />
-  </a>
+    <img src="https://img.shields.io/badge/LinkedIn-0F172A?style=flat-square&logo=linkedin&logoColor=F8FAFC" alt="LinkedIn" /></a>
   &nbsp;&nbsp;
   <a href="https://fullstack-portfolio-beryl-gamma.vercel.app/" target="_blank" style="text-decoration: none">
-    <img src="https://img.shields.io/badge/Portfolio-0F172A?style=flat-square&logo=vercel&logoColor=F8FAFC" alt="Portfolio" />
-  </a>
+    <img src="https://img.shields.io/badge/Portfolio-0F172A?style=flat-square&logo=vercel&logoColor=F8FAFC" alt="Portfolio" /></a>
   &nbsp;&nbsp;
   <a href="mailto:rohtashpoonia2274@gmail.com" style="text-decoration: none">
-    <img src="https://img.shields.io/badge/Email-7C2D12?style=flat-square&logo=gmail&logoColor=F8FAFC" alt="Email" />
-  </a>
+    <img src="https://img.shields.io/badge/Email-7C2D12?style=flat-square&logo=gmail&logoColor=F8FAFC" alt="Email" /></a>
 </p>
 
 > Code is not just logic — it’s also clarity, discipline, and creativity.
